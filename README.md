@@ -468,3 +468,6 @@ I'm certainly looking forward to a slick `pydantic` validation layer in the clie
 
 But browser Python will depend heavily on the ability to minimize asset sizes and promote caching libraries.
 PyScript / Pyodide currently give a lot of Python package flexibility vs something like Brython, but with heavy download costs.
+
+Also note that the backend isn't nearly production ready or tested.
+Depending on how many Notification Channel Publishers and how many Listener Subscribers there are a Connection Pool or observer pattern could increase your mileage.

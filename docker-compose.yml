@@ -1,6 +1,8 @@
 services:
   backend:
     build: ./backend
+    volumes:
+      - ./backend:/home/appuser
     env_file:
       - ./.env.dev
     ports:

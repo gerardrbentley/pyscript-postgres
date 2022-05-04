@@ -4,7 +4,7 @@ monkey.patch_all()
 import os
 import select
 
-from bottle import route, run, request, response, default_app
+from bottle import route, run, request, response, default_app, static_file
 import gevent
 import psycopg
 
@@ -14,6 +14,14 @@ from models import CreateNoteRequest
 def cors():
     pass
 
+@route('/')
+@route('')
+def index():
+    return static_file('index.html', '.')
+
+@route('/models.py')
+def index():
+    return static_file('models.py', '.')
 
 def get_connection():
     connection = psycopg.connect(
