@@ -6,6 +6,16 @@ Using Python full stack for frontend data parsing and backend as a webservice.
 
 Built with ❤️ from [Gar's Bar](https://tech.gerardbentley.com/)
 
+Intended Demo (working locally and with curl):
+
+![Localhost Demo](images/local_working.gif)
+
+PyScript Create + curl stream demo:
+
+![Curl streaming demo](images/curl_working.gif)
+
+See bottom or visit [notes-api.gerardbentley.com](https://notes-api.gerardbentley.com) to inspect the browser broken stream.
+
 ## What's this?
 
 - `README.md`: This Document! To help you find your way around
@@ -471,3 +481,10 @@ PyScript / Pyodide currently give a lot of Python package flexibility vs somethi
 
 Also note that the backend isn't nearly production ready or tested.
 Depending on how many Notification Channel Publishers and how many Listener Subscribers there are a Connection Pool or observer pattern could increase your mileage.
+
+Currently I can't get the stream to come through Fetch API on a hosted server.
+I assumed at first it was CORS related, but now I'm not so sure.
+
+Broken Demo:
+
+![Broken remote stream](images/server_broken.gif)

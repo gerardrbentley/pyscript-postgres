@@ -1,4 +1,5 @@
 from gevent import monkey
+
 monkey.patch_all()
 
 import os
@@ -10,18 +11,22 @@ import psycopg
 
 from models import CreateNoteRequest
 
+
 @route("/<:re:.*>", method="OPTIONS")
 def cors():
     pass
 
-@route('/')
-@route('')
-def index():
-    return static_file('index.html', '.')
 
-@route('/models.py')
+@route("/")
+@route("")
 def index():
-    return static_file('models.py', '.')
+    return static_file("index.html", ".")
+
+
+@route("/models.py")
+def index():
+    return static_file("models.py", ".")
+
 
 def get_connection():
     connection = psycopg.connect(
@@ -52,7 +57,10 @@ def add_note():
     connection = get_connection()
     note = CreateNoteRequest.from_string(request.body.read())
     with connection.cursor() as cursor:
-        cursor.execute("INSERT INTO note(username, body) VALUES(%s, %s);", (note.username, note.body))
+        cursor.execute(
+            "INSERT INTO note(username, body) VALUES(%s, %s);",
+            (note.username, note.body),
+        )
 
 
 def apply_cors():
