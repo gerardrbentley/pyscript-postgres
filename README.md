@@ -3,6 +3,7 @@
 Exploring [PyScript](https://pyscript.net/) connecting to a [Postgres](https://www.postgresql.org/) database via a [Bottle](https://bottlepy.org/docs/dev/) + [gevent](http://www.gevent.org/) backend.
 
 Using Python full stack for frontend data parsing and backend as a webservice.
+Use your dataclasses / Pydantic models to validate and handle Python objects on the Client and Server!
 
 Built with ❤️ from [Gar's Bar](https://tech.gerardbentley.com/)
 

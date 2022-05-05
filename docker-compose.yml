@@ -9,6 +9,16 @@ services:
       - "8080:8080"
     depends_on:
       - db
+  fast-backend:
+    build: ./fast_api_backend
+    volumes:
+      - ./fast_api_backend:/home/appuser
+    env_file:
+      - ./.env.dev
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
 
   db:
     build: ./postgres
